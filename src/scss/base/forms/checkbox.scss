@@ -1,0 +1,48 @@
+.checkbox {
+  position: relative;
+  &:not(:last-child) {
+    margin-bottom: em(5);
+  }
+  // .checkbox__input
+  &__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    &:focus-visible + .checkbox__label:before {
+      box-shadow: 0 0 5px #4ea2ff;
+    }
+    &:checked + .checkbox__label:before {
+      background: url('@img/icons/arrow-check-box.svg') 50% 50% no-repeat;
+    }
+  }
+  // .checkbox__label
+  &__label {
+    cursor: pointer;
+    display: inline-flex;
+    position: relative;
+    gap: toRem(16);
+    &:before {
+      content: '';
+      align-self: flex-start;
+      flex: 0 0 toRem(24);
+      width: toRem(24);
+      height: toRem(24);
+      border-radius: toRem(6);
+      border: toRem(1) solid #4ea2ff;
+      transition: all 0.3s;
+    }
+    ._form-error & {
+      &::before {
+        border: toRem(1) solid red;
+      }
+    }
+  }
+  // .checkbox__text
+  &__text {
+    align-self: center;
+    ._form-error & {
+      color: red;
+    }
+  }
+}

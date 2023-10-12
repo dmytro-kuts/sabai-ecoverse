@@ -1,0 +1,93 @@
+//<FORM>
+// Сніппет (HTML):
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(8);
+  &__row {
+    position: relative;
+    width: 100%;
+    &:not(:last-child) {
+      margin-bottom: toRem(8);
+    }
+    
+
+    
+  }
+  &__column {
+  }
+  &__line {
+  }
+  &__input {
+    position: relative;
+    width: 100%;
+    padding: toRem(14) toRem(20);
+    border-radius: toRem(8);
+    border: toRem(1) solid #eff2f5;
+    background: $whiteColor;
+    transition: all 0.3s;
+    ._form-error & {
+      border: toRem(1) solid red;
+      background: rgb(255, 0, 0, 0.1);
+    }
+		&:focus{
+			border: toRem(1) solid $lightBlueColor;
+		}
+		&::placeholder {
+			transition: opacity 0.3s;
+		}
+		&:focus::placeholder {
+			opacity: 0;
+		}
+  }
+  &__button {
+    align-self: center;
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+  &__error {
+    position: absolute;
+    font-size: toRem(14);
+    color: red;
+    top: toRem(4);
+    left: toRem(20);
+  }
+}
+//</FORM>
+
+// <BUTTONS>
+// Сніппет (HTML): btn
+// @import "button";
+
+// <INPUTS>
+// Сніппет (HTML): inp
+@import 'input';
+
+// <CHECK>
+// Сніппет (HTML): chk
+@import 'checkbox';
+
+// <RADIO>
+// Сніппет (HTML): opt
+// @import "radio";
+
+// <SELECT>
+// Сніппет (HTML): sel
+// @import "select";
+
+// <RATING>
+// Сніппет (HTML): rating
+// @import "rating";
+
+// <QUANTITY>
+// Сніппет (HTML): qa
+// @import "quantity";
+
+// <RANGE>
+// Сніппет (HTML):
+// @import "range";
+
+// <CALENDAR>
+// Сніппет (HTML):
+// @import "datepicker";

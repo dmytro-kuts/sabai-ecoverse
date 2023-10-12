@@ -1,0 +1,93 @@
+// Заголовки, загальні БЕМ блоки та інше...
+//========================================================================================================================================================
+.page {
+  // .page__referral-program
+  &__referral-program {
+  }
+  // .page__about-us
+  &__about-us {
+  }
+  // .page__about-ecoverse
+  &__about-ecoverse {
+  }
+  // .page__referral-program-details
+  &__referral-program-details {
+  }
+}
+//========================================================================================================================================================
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  line-height: normal;
+  @include adaptiveValue('font-size', 18, 16);
+  transition: box-shadow 0.3s;
+  @media (max-width: $mobile) {
+    line-height: 120%;
+  }
+  &--white {
+    color: $blueColor;
+    border-radius: toRem(12);
+    padding: toRem(14) toRem(24);
+    box-shadow: toRem(5) toRem(5) toRem(50) 0px #d3dae9;
+    @media (max-width: $mobile) {
+      padding: toRem(12) toRem(16);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: toRem(5) toRem(5) toRem(50) 0px rgb(173, 191, 230);
+      }
+    }
+  }
+  &--blue {
+    border-radius: toRem(10);
+    color: $whiteColor;
+    @extend %bgBlueGradient;
+    padding: toRem(14) toRem(30);
+    @media (max-width: $mobile) {
+      padding: toRem(12) toRem(16);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: toRem(5) toRem(5) toRem(50) 0px rgb(173, 191, 230);
+      }
+    }
+  }
+}
+//========================================================================================================================================================
+.title {
+  color: $mainColor;
+  @include adaptiveValue('font-size', 48, 28);
+  font-weight: 700;
+  line-height: normal;
+  @media (max-width: $mobile) {
+    line-height: 130%;
+  }
+}
+.small-title {
+  color: $mainColor;
+  @include adaptiveValue('font-size', 36, 24);
+  font-weight: 600;
+  line-height: normal;
+  @media (max-width: $mobile) {
+    line-height: 130%;
+  }
+}
+.text {
+  line-height: normal;
+}
+//========================================================================================================================================================
+//? animation slide-in-bottom-50
+%slide-in-bottom-50 {
+  overflow: hidden;
+  transform: translate(0px, toRem(50));
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+  &._watcher-view {
+    transform: translate(0px, 0);
+    opacity: 1;
+    transition: all 0.8s ease 0.2s;
+  }
+}
